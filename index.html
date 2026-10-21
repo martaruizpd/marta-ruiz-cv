@@ -128,9 +128,25 @@
 
   /* ---------- PRINT ---------- */
   @media print{
-    body{ background:#fff; padding:0; }
+    body{ background:#fff; padding:0; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
     .sidebar, .card{ box-shadow:none; }
     .sidebar{ position:static; }
+    /* light grey panels so each section reads as its own block on paper */
+    .sidebar, .card{ background:#F4F5F8; }
+    .role-scope{ background:#fff; }
+    .hero .blob{ background:#E6F6F7; }
+    /* one left edge: name with contact info, section titles with card content */
+    .name, .role{ text-align:left; }
+    /* section titles sit inside the top of their grey panel */
+    .section-h{ margin:0 !important; background:#F4F5F8; border-radius:18px 18px 0 0; padding:24px 30px 6px; }
+    .sec-wrap + .card, .section-h + .card{ border-top-left-radius:0; border-top-right-radius:0; padding-top:18px; }
+    .main > .sec-wrap + .card, .main > .section-h + .card{ margin-top:-22px; }
+    /* both jobs share one Professional Experience panel, split by a thin line */
+    .main > .sec-wrap + .card{ border-bottom-left-radius:0; border-bottom-right-radius:0; padding-bottom:22px; }
+    .main > .sec-wrap + .card + .card{
+      margin-top:-22px; border-top-left-radius:0; border-top-right-radius:0; padding-top:22px;
+      background: linear-gradient(#DFE2EA, #DFE2EA) 30px 0 / calc(100% - 60px) 1px no-repeat, #F4F5F8;
+    }
   }
 </style>
 </head>
@@ -186,11 +202,11 @@
         <span class="blob"></span>
         <div class="inner">
           <h1>Hi! I&rsquo;m Marta Ruiz,<br><span class="teal">a Senior Product</span> Designer</h1>
-          <p>Product Designer with +10 years in design, specialising in complex search and e-commerce products. For the past 5+ years I was embedded in Kroger&rsquo;s product org via Empathy.co, one of the US&rsquo;s largest grocery retailers &mdash; working across both search experience and monetisation ads. I&rsquo;m strong in user research and testing, comfortable with senior stakeholders, and looking for a role where design drives real decisions.</p>
+          <p>Senior Product Designer with 10+ years in design, connecting user needs with business goals. For 5+ years I was embedded in Kroger&rsquo;s product org via Empathy.co, designing search and monetisation experiences for tens of millions of customers. User research and testing are at the core of my work, and I&rsquo;m comfortable working with senior stakeholders. Open to full-time senior roles, remote from Spain with UK/EU teams, and happy to travel.</p>
         </div>
       </div>
 
-      <div>
+      <div class="sec-wrap">
         <div class="section-h">Professional Experience</div>
       </div>
 
@@ -201,7 +217,7 @@
 
         <div class="phase">Phase 1 &middot; Search experience (2020&ndash;2023)</div>
         <ul class="b">
-          <li>Redesigned core search for one of the US&rsquo;s largest grocery retailers &mdash; <strong>tens of millions</strong> of users across web and app.</li>
+          <li>Redesigned core search for Kroger, one of the US&rsquo;s largest grocery retailers &mdash; <strong>tens of millions</strong> of users across web and app.</li>
           <li>Cut broad-query result sets by <strong>80%</strong> (1,000+ &rarr; ~160) through iterative design and A/B testing, lifting add-to-cart conversion and revenue.</li>
           <li>Shipped a coupons carousel and inclusive filter chips (dietary, savings, price range) from user-research insights &mdash; significant uplift in filter engagement.</li>
         </ul>
@@ -265,7 +281,7 @@
 
       <!-- RECOMMENDATION -->
       <div class="section-h" style="margin-top: 40px;">Recommendation</div>
-      <div class="card" style="border-left: 3px solid var(--accent); padding-left: 20px;">
+      <div class="card">
         <blockquote style="margin: 0 0 14px; font-size: 15px; line-height: 1.7; color: #333; font-style: italic;">
           &ldquo;Marta is a fantastic designer with an exceptional eye for detail and a thoughtful approach to solving the right problems. She brings a strong customer-first mindset and uses data to inform her design decisions and conversations with stakeholders.&rdquo;
         </blockquote>
