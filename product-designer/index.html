@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marta Ruiz — Product Designer</title>
+<meta name="description" content="Product Designer with +10 years in design, specialising in complex search and e-commerce products. Previously at Kroger via Empathy.co, one of the US's largest grocery retailers. Open to roles where design drives real decisions.">
+<meta property="og:title" content="Marta Ruiz — Product Designer">
+<meta property="og:description" content="+10 years in design. 5+ years at Kroger via Empathy.co — search experience and monetisation ads. Strong in user research, comfortable with senior stakeholders.">
+<meta property="og:url" content="https://martaruizcv.netlify.app/">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#13C7CE;
+    --teal-deep:#0FA9AF;
+    --ink:#1B2330;
+    --body:#525A6B;
+    --muted:#949BA8;
+    --bg:#EEF0F5;
+    --card:#FFFFFF;
+    --chip:#E8F7F8;
+    --track:#E1F4F5;
+    --rule:#ECEDF2;
+    --shadow:0 6px 20px rgba(25,35,55,.07);
+  }
+  *{ box-sizing:border-box; }
+  html{ -webkit-text-size-adjust:100%; }
+  body{
+    margin:0; background:var(--bg);
+    font-family:'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    color:var(--body); font-size:15px; line-height:1.5;
+    padding:32px 18px;
+  }
+  .page{
+    max-width:880px; margin:0 auto;
+    display:grid; grid-template-columns:252px 1fr; gap:22px; align-items:start;
+  }
+
+  /* ---------- SIDEBAR ---------- */
+  .sidebar{
+    background:var(--card); border-radius:18px; padding:32px 26px;
+    box-shadow:var(--shadow);
+    position:sticky; top:24px;
+  }
+  .name{ text-align:center; font-size:27px; font-weight:700; color:var(--ink); line-height:1.05; letter-spacing:.3px; }
+  .role{ text-align:center; font-size:11px; color:var(--teal-deep); font-weight:600; margin-top:7px; letter-spacing:2px; text-transform:uppercase; }
+
+  .s-head{
+    font-size:13px; font-weight:700; color:var(--ink); letter-spacing:.4px;
+    margin:26px 0 11px; padding-bottom:7px; border-bottom:1px solid var(--rule);
+  }
+  .s-head.first{ margin-top:30px; }
+
+  .c-row{ display:flex; align-items:flex-start; gap:10px; margin-bottom:11px; }
+  .c-row svg{ width:16px; height:16px; margin-top:1px; flex:0 0 auto; }
+  .c-row .v{ font-size:12.5px; color:var(--body); line-height:1.35; word-break:break-word; }
+  .c-row a{ color:inherit; text-decoration:none; }
+  .c-row a:hover{ color:var(--teal-deep); }
+
+  .lang{ margin-bottom:13px; }
+  .lang-top{ display:flex; justify-content:space-between; font-size:12.5px; color:var(--ink); font-weight:500; margin-bottom:6px; }
+  .lang-top .lvl{ color:var(--muted); font-weight:500; }
+  .track{ height:6px; background:var(--track); border-radius:6px; overflow:hidden; }
+  .fill{ height:100%; background:var(--teal); border-radius:6px; }
+
+  .chips{ display:flex; flex-wrap:wrap; gap:7px; }
+  .chip{
+    display:inline-block; background:var(--chip); color:var(--ink);
+    font-size:11.5px; font-weight:500; padding:5px 11px; border-radius:8px; line-height:1.2;
+  }
+
+  /* ---------- MAIN ---------- */
+  .main{ display:flex; flex-direction:column; gap:22px; }
+  .card{ background:var(--card); border-radius:18px; padding:28px 30px; box-shadow:var(--shadow); }
+
+  .section-h{ font-size:19px; font-weight:700; color:var(--ink); margin:8px 0 0 2px; }
+  .section-h::after{ content:""; display:block; width:34px; height:4px; background:var(--teal); border-radius:3px; margin-top:9px; }
+
+  /* hero */
+  .hero{ position:relative; overflow:hidden; }
+  .hero .blob{ position:absolute; top:-70px; right:-60px; width:200px; height:200px; border-radius:50%; background:var(--chip); z-index:0; }
+  .hero .inner{ position:relative; z-index:1; }
+  .hero h1{ font-size:30px; font-weight:700; color:var(--ink); line-height:1.16; margin:0 0 14px; }
+  .hero h1 .teal{ color:var(--teal); }
+  .hero p{ margin:0; font-size:13px; color:var(--body); line-height:1.62; max-width:54ch; }
+
+  /* experience */
+  .pill-date{ display:inline-block; background:var(--teal); color:#fff; font-size:11.5px; font-weight:600; padding:4px 11px; border-radius:7px; }
+  .pill-date.soft{ background:var(--chip); color:var(--teal-deep); }
+  .exp-title{ font-size:16px; font-weight:700; color:var(--ink); margin:11px 0 3px; line-height:1.25; }
+  .exp-loc{ font-size:12.5px; color:var(--muted); margin-bottom:8px; }
+  .phase{ font-size:13px; font-weight:700; color:var(--teal-deep); margin:18px 0 9px; letter-spacing:.2px; }
+  ul.b{ list-style:none; margin:0; padding:0; }
+  ul.b li{ position:relative; padding-left:18px; margin-bottom:9px; font-size:13px; color:var(--body); line-height:1.55; }
+  ul.b li:last-child{ margin-bottom:0; }
+  ul.b li::before{ content:""; position:absolute; left:0; top:8px; width:6px; height:6px; background:var(--teal); border-radius:50%; }
+  strong{ font-weight:600; color:var(--ink); }
+
+  /* role scope note */
+  .role-scope{ font-size:12.5px; color:var(--body); line-height:1.55; margin:10px 0 16px; padding:11px 14px; background:var(--bg); border-radius:8px; }
+
+  /* two-up */
+  .row2{ display:grid; grid-template-columns:1fr 1fr; gap:22px; align-items:start; }
+  .col{ display:flex; flex-direction:column; }
+  .col .card{ flex:1; }
+  .col .section-h{ margin-top:0; }
+  .entry{ margin-bottom:16px; }
+  .entry:last-child{ margin-bottom:0; }
+  .entry .pill-date{ font-size:10.5px; }
+  .entry-title{ font-size:13.5px; font-weight:700; color:var(--ink); margin:8px 0 2px; line-height:1.3; }
+  .entry-sub{ font-size:12px; color:var(--muted); line-height:1.35; }
+  .e-divider{ height:1px; background:var(--rule); margin:14px 0; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:720px){
+    body{ padding:18px 12px; }
+    .page{ grid-template-columns:1fr; gap:16px; }
+    .sidebar{ position:static; padding:26px 22px; }
+    .name{ font-size:24px; }
+    .hero h1{ font-size:25px; }
+    .card{ padding:22px 22px; border-radius:16px; }
+    .row2{ grid-template-columns:1fr; gap:16px; }
+  }
+
+  /* ---------- PRINT ---------- */
+  @media print{
+    body{ background:#fff; padding:0; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    .sidebar, .card{ box-shadow:none; }
+    .sidebar{ position:static; }
+    /* light grey panels so each section reads as its own block on paper */
+    .sidebar, .card{ background:#F4F5F8; }
+    .role-scope{ background:#fff; }
+    .hero .blob{ background:#E6F6F7; }
+    /* one left edge: name with contact info, section titles with card content */
+    .name, .role{ text-align:left; }
+    /* section titles sit inside the top of their grey panel */
+    .section-h{ margin:0 !important; background:#F4F5F8; border-radius:18px 18px 0 0; padding:24px 30px 6px; }
+    .sec-wrap + .card, .section-h + .card{ border-top-left-radius:0; border-top-right-radius:0; padding-top:18px; }
+    .main > .sec-wrap + .card, .main > .section-h + .card{ margin-top:-22px; }
+    /* both jobs share one Professional Experience panel, split by a thin line */
+    .main > .sec-wrap + .card{ border-bottom-left-radius:0; border-bottom-right-radius:0; padding-bottom:22px; }
+    .main > .sec-wrap + .card + .card{
+      margin-top:-22px; border-top-left-radius:0; border-top-right-radius:0; padding-top:22px;
+      background: linear-gradient(#DFE2EA, #DFE2EA) 30px 0 / calc(100% - 60px) 1px no-repeat, #F4F5F8;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar">
+      <div class="name">Marta Ruiz</div>
+      <div class="role">Product Designer</div>
+
+      <div class="s-head first">Contact</div>
+      <div class="c-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#13C7CE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7.5l8.5 6 8.5-6"/></svg>
+        <span class="v"><a href="mailto:marta.ruizc@outlook.com">marta.ruizc@outlook.com</a></span>
+      </div>
+      <div class="c-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#13C7CE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <span class="v">Spain · Remote with UK, EU or US teams</span>
+      </div>
+      <div class="c-row">
+        <svg viewBox="0 0 24 24" fill="#13C7CE"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.75V21h-4v-5.3c0-1.26-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21H9z"/></svg>
+        <span class="v"><a href="https://www.linkedin.com/in/marta-ruiz-84880238" target="_blank" rel="noopener">marta-ruiz-84880238</a></span>
+      </div>
+
+      <div class="s-head">Languages</div>
+      <div class="lang">
+        <div class="lang-top"><span>Spanish</span><span class="lvl">Native</span></div>
+        <div class="track"><div class="fill" style="width:100%"></div></div>
+      </div>
+      <div class="lang">
+        <div class="lang-top"><span>English</span><span class="lvl">Professional</span></div>
+        <div class="track"><div class="fill" style="width:85%"></div></div>
+      </div>
+
+      <div class="s-head">Design &amp; Prototyping</div>
+      <div class="chips"><span class="chip">Figma</span><span class="chip">Figma Make</span><span class="chip">Claude Design</span><span class="chip">Sketch</span><span class="chip">Illustrator</span><span class="chip">Photoshop</span><span class="chip">InDesign</span></div>
+
+      <div class="s-head">Research &amp; Testing</div>
+      <div class="chips"><span class="chip">UserZoom</span><span class="chip">Moderated interviews</span><span class="chip">Unmoderated testing</span><span class="chip">A/B testing</span><span class="chip">Accessibility testing</span></div>
+
+      <div class="s-head">AI Tools</div>
+      <div class="chips"><span class="chip">Claude</span><span class="chip">ChatGPT</span><span class="chip">Figma Make</span><span class="chip">Stitch</span><span class="chip">Perplexity</span><span class="chip">Scholar AI</span></div>
+
+      <div class="s-head">Collaboration</div>
+      <div class="chips"><span class="chip">Jira &amp; Confluence</span><span class="chip">Mural</span><span class="chip">Agile environments</span></div>
+    </aside>
+
+    <!-- ============ MAIN ============ -->
+    <main class="main">
+
+      <div class="card hero">
+        <span class="blob"></span>
+        <div class="inner">
+          <h1>Hi! I&rsquo;m Marta Ruiz,<br><span class="teal">a Product</span> Designer</h1>
+          <p>10+ years in design, connecting user needs with business goals. For 5+ years I was embedded via Empathy.co in the product org of Kroger, one of the US&rsquo;s largest grocery retailers, designing search and monetisation experiences for tens of millions of customers. User research and testing are at the core of my work, and I&rsquo;m comfortable working with senior stakeholders. Open to full-time product design roles, remote from Spain with UK, EU or US teams, and happy to travel.</p>
+        </div>
+      </div>
+
+      <div class="sec-wrap">
+        <div class="section-h">Professional Experience</div>
+      </div>
+
+      <div class="card">
+        <span class="pill-date">Nov 2020 &ndash; Mar 2026</span>
+        <div class="exp-title">Product Designer &middot; Kroger (contractor via Empathy.co)</div>
+        <div class="exp-loc">Cincinnati, US &middot; Remote from Spain (CET) &mdash; 5+ years collaborating with US-based teams across timezones</div>
+
+        <div class="phase">Phase 1 &middot; Search experience (2020&ndash;2023)</div>
+        <ul class="b">
+          <li>Co-led the redesign of Kroger&rsquo;s core search, used by <strong>tens of millions</strong> of customers across web and app.</li>
+          <li>Cut broad-query result sets by <strong>80%</strong> (1,000+ &rarr; ~160) through iterative design and A/B testing, lifting add-to-cart conversion and revenue.</li>
+          <li>Shipped a coupons carousel and inclusive filter chips (dietary, savings, price range) from user-research insights &mdash; significant uplift in filter engagement.</li>
+        </ul>
+
+        <div class="phase">Phase 2 &middot; Monetisation Ads &mdash; promoted (2023&ndash;2026)</div>
+        <div class="role-scope">Lead Product Designer on the Monetisation Ads team at Kroger &mdash; owning the full design process across every project, from discovery through developer handoff (web, iOS &amp; Android), collaborating closely with the Product Manager and Senior Management to align on business objectives and product guidelines.</div>
+        <ul class="b">
+          <li>Led end-to-end design of new ad formats shipped at scale, driving measurable revenue impact for Kroger and brand partners (specific figures under NDA).</li>
+          <li>Designed sponsored product carousels &mdash; one of the team&rsquo;s highest-impact launches &mdash; plus a video ad format with carousel, including a screen-reader accessibility evaluation.</li>
+          <li>Prototyped new ad types and tested them with 100 shoppers, 40 brands and 5 moderated interviews &mdash; the findings put sponsored carousels first.</li>
+          <li>Made ad formats responsive and accessible (live text instead of flat images), added dynamic price tags to ads, and brought sponsored content into homepage campaigns.</li>
+          <li>Presented regularly to Director/VP-level stakeholders across cross-functional teams of 6&ndash;15.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="pill-date">Jan 2016 &ndash; Aug 2020</span>
+        <div class="exp-title">Visual Designer &middot; AlfaPeople</div>
+        <div class="exp-loc">London, UK</div>
+        <ul class="b">
+          <li>Lead designer for all marketing and brand materials across a <strong>9-country</strong> organisation &mdash; owning layout, visual direction, and execution.</li>
+          <li>Led the company&rsquo;s first social-media templates and a full rebrand (new brand identity and website).</li>
+        </ul>
+        <div class="role-scope" style="margin-top:14px;">Parallel to this role, pursued UX certifications and transitioned deliberately into product design &mdash; joining Empathy.co as a UX/UI Designer in 2020.</div>
+      </div>
+
+      <div class="row2">
+        <div class="col">
+          <div class="section-h">Education</div>
+          <div class="card">
+            <div class="entry">
+              <span class="pill-date soft">2013 &ndash; 2014</span>
+              <div class="entry-title">PG Certificate &mdash; Design for Visual Communication</div>
+              <div class="entry-sub">University of the Arts London</div>
+            </div>
+            <div class="e-divider"></div>
+            <div class="entry">
+              <span class="pill-date soft">2006 &ndash; 2010</span>
+              <div class="entry-title">BSc Honours &mdash; Industrial Design &amp; Multimedia Engineering</div>
+              <div class="entry-sub">CESINE University, Spain</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="section-h">Certifications</div>
+          <div class="card">
+            <div class="entry"><span class="pill-date soft">May 2026</span><div class="entry-title">AI for UX Design</div><div class="entry-sub">Designlab</div></div>
+            <div class="e-divider"></div>
+            <div class="entry"><span class="pill-date soft">Nov 2025</span><div class="entry-title">Accessibility Design Heuristics</div><div class="entry-sub">Level Access</div></div>
+            <div class="e-divider"></div>
+            <div class="entry"><span class="pill-date soft">Oct 2025</span><div class="entry-title">Strategic Business Acumen for Designers</div><div class="entry-sub">Designlab</div></div>
+            <div class="e-divider"></div>
+            <div class="entry"><span class="pill-date soft">Sep &ndash; Oct 2020</span><div class="entry-title">UX: Research &amp; Prototyping</div><div class="entry-sub">UC San Diego</div></div>
+            <div class="e-divider"></div>
+            <div class="entry"><span class="pill-date soft">Oct 2015</span><div class="entry-title">UX for the Web</div><div class="entry-sub">Open University of Australia</div></div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- RECOMMENDATION -->
+      <div class="section-h" style="margin-top: 40px;">Recommendation</div>
+      <div class="card">
+        <blockquote style="margin: 0 0 14px; font-size: 15px; line-height: 1.7; color: #333; font-style: italic;">
+          &ldquo;Marta is a fantastic designer with an exceptional eye for detail and a thoughtful approach to solving the right problems. She brings a strong customer-first mindset and uses data to inform her design decisions and conversations with stakeholders.&rdquo;
+        </blockquote>
+        <div style="font-size: 14px;">
+          <span style="font-weight: 600; color: var(--accent);">Nicola Cimino</span>
+          <span style="color: #555;"> &middot; Product &amp; Experience Leader, Kroger &middot; March 2026</span>
+        </div>
+        <div style="margin-top: 6px; font-size: 12px; color: #999; font-style: italic;">
+          Full recommendation visible at <a href="https://www.linkedin.com/in/marta-ruiz-84880238" style="color: var(--accent);">linkedin.com/in/marta-ruiz-84880238</a>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</body>
+</html>
