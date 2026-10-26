@@ -138,6 +138,9 @@
     body{ background:#fff; padding:0; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
     .sidebar, .card{ box-shadow:none; }
     .sidebar{ position:static; }
+    /* use the full printable width of the page */
+    .page{ max-width:none; }
+    .main > .sec-wrap + .card + .card{ break-inside:avoid; page-break-inside:avoid; }
     /* light grey panels so each section reads as its own block on paper */
     .sidebar, .card{ background:#F4F5F8; }
     .role-scope{ background:#fff; }
