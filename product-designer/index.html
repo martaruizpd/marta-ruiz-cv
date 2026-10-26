@@ -115,6 +115,12 @@
   .entry-sub{ font-size:12px; color:var(--muted); line-height:1.35; }
   .e-divider{ height:1px; background:var(--rule); margin:14px 0; }
 
+  /* what I bring */
+  .sk{ display:grid; grid-template-columns:170px 1fr; gap:14px; padding:9px 0; align-items:baseline; }
+  .sk + .sk{ border-top:1px solid var(--rule); }
+  .sk-t{ font-size:13px; font-weight:700; color:var(--teal-deep); }
+  .sk-d{ font-size:13px; color:var(--body); line-height:1.55; }
+
   /* ---------- RESPONSIVE ---------- */
   @media (max-width:720px){
     body{ padding:18px 12px; }
@@ -124,29 +130,41 @@
     .hero h1{ font-size:25px; }
     .card{ padding:22px 22px; border-radius:16px; }
     .row2{ grid-template-columns:1fr; gap:16px; }
+    .sk{ grid-template-columns:1fr; gap:2px; }
+  }
+
+  /* ---------- PANEL LAYOUT (screen and print) ---------- */
+  /* white page with light grey panels; one left edge for every title */
+  body{ background:#fff; }
+  .page{ max-width:1060px; }
+  .sidebar, .card{ background:#F4F5F8; box-shadow:none; }
+  .role-scope{ background:#fff; }
+  .hero .blob{ background:#E6F6F7; }
+  .name, .role{ text-align:left; }
+  /* section titles sit inside the top of their grey panel */
+  .section-h{ margin:0 !important; background:#F4F5F8; border-radius:18px 18px 0 0; padding:24px 30px 6px; }
+  .sec-wrap + .card, .section-h + .card{ border-top-left-radius:0; border-top-right-radius:0; padding-top:18px; }
+  .main > .sec-wrap + .card, .main > .section-h + .card{ margin-top:-22px; }
+  /* both jobs share one Professional Experience panel, split by a thin line */
+  .main > .sec-wrap + .card{ border-bottom-left-radius:0; border-bottom-right-radius:0; padding-bottom:22px; }
+  .main > .sec-wrap + .skills-card{ border-bottom-left-radius:18px; border-bottom-right-radius:18px; padding-bottom:20px; }
+  .main > .sec-wrap + .card + .card{
+    margin-top:-22px; border-top-left-radius:0; border-top-right-radius:0; padding-top:22px;
+    background: linear-gradient(#DFE2EA, #DFE2EA) 30px 0 / calc(100% - 60px) 1px no-repeat, #F4F5F8;
+  }
+  @media (max-width:720px){
+    .section-h{ padding:22px 22px 6px; border-radius:16px 16px 0 0; }
+    .main > .sec-wrap + .card, .main > .section-h + .card{ margin-top:-16px; }
+    .main > .sec-wrap + .card + .card{ margin-top:-16px; background: linear-gradient(#DFE2EA, #DFE2EA) 22px 0 / calc(100% - 44px) 1px no-repeat, #F4F5F8; }
   }
 
   /* ---------- PRINT ---------- */
   @media print{
-    body{ background:#fff; padding:0; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
-    .sidebar, .card{ box-shadow:none; }
+    body{ padding:0; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
     .sidebar{ position:static; }
-    /* light grey panels so each section reads as its own block on paper */
-    .sidebar, .card{ background:#F4F5F8; }
-    .role-scope{ background:#fff; }
-    .hero .blob{ background:#E6F6F7; }
-    /* one left edge: name with contact info, section titles with card content */
-    .name, .role{ text-align:left; }
-    /* section titles sit inside the top of their grey panel */
-    .section-h{ margin:0 !important; background:#F4F5F8; border-radius:18px 18px 0 0; padding:24px 30px 6px; }
-    .sec-wrap + .card, .section-h + .card{ border-top-left-radius:0; border-top-right-radius:0; padding-top:18px; }
-    .main > .sec-wrap + .card, .main > .section-h + .card{ margin-top:-22px; }
-    /* both jobs share one Professional Experience panel, split by a thin line */
-    .main > .sec-wrap + .card{ border-bottom-left-radius:0; border-bottom-right-radius:0; padding-bottom:22px; }
-    .main > .sec-wrap + .card + .card{
-      margin-top:-22px; border-top-left-radius:0; border-top-right-radius:0; padding-top:22px;
-      background: linear-gradient(#DFE2EA, #DFE2EA) 30px 0 / calc(100% - 60px) 1px no-repeat, #F4F5F8;
-    }
+    /* use the full printable width of the page */
+    .page{ max-width:none; }
+    .main > .sec-wrap + .card + .card{ break-inside:avoid; page-break-inside:avoid; }
   }
 </style>
 </head>
@@ -204,6 +222,18 @@
           <h1>Hi! I&rsquo;m Marta Ruiz,<br><span class="teal">a Product</span> Designer</h1>
           <p>10+ years in design, connecting user needs with business goals. For 5+ years I was embedded via Empathy.co in the product org of Kroger, one of the US&rsquo;s largest grocery retailers, designing search and monetisation experiences for tens of millions of customers. User research and testing are at the core of my work, and I&rsquo;m comfortable working with senior stakeholders. Open to full-time product design roles, remote from Spain with UK, EU or US teams, and happy to travel.</p>
         </div>
+      </div>
+
+      <div class="sec-wrap">
+        <div class="section-h">What I bring</div>
+      </div>
+      <div class="card skills-card">
+        <div class="sk"><div class="sk-t">Discovery</div><div class="sk-d">I plan and facilitate discovery sessions to frame problems and uncover opportunities.</div></div>
+        <div class="sk"><div class="sk-t">Research &amp; testing</div><div class="sk-d">I write research plans and run unmoderated usability tests, and support research teams with moderated ones.</div></div>
+        <div class="sk"><div class="sk-t">Facilitation</div><div class="sk-d">I lead workshops and meetings, keeping teams and stakeholders aligned.</div></div>
+        <div class="sk"><div class="sk-t">Planning</div><div class="sk-d">I plan design roadmaps, size the work for each quarter and break it into sprints.</div></div>
+        <div class="sk"><div class="sk-t">Design &amp; prototyping</div><div class="sk-d">From quick wireframes to high-fidelity prototypes, covering every flow and edge case.</div></div>
+        <div class="sk"><div class="sk-t">AI-assisted design</div><div class="sk-d">Certified in AI for UX Design; I use AI to work faster across research, ideation and design.</div></div>
       </div>
 
       <div class="sec-wrap">
