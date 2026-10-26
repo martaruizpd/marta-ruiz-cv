@@ -133,31 +133,38 @@
     .sk{ grid-template-columns:1fr; gap:2px; }
   }
 
+  /* ---------- PANEL LAYOUT (screen and print) ---------- */
+  /* white page with light grey panels; one left edge for every title */
+  body{ background:#fff; }
+  .page{ max-width:1060px; }
+  .sidebar, .card{ background:#F4F5F8; box-shadow:none; }
+  .role-scope{ background:#fff; }
+  .hero .blob{ background:#E6F6F7; }
+  .name, .role{ text-align:left; }
+  /* section titles sit inside the top of their grey panel */
+  .section-h{ margin:0 !important; background:#F4F5F8; border-radius:18px 18px 0 0; padding:24px 30px 6px; }
+  .sec-wrap + .card, .section-h + .card{ border-top-left-radius:0; border-top-right-radius:0; padding-top:18px; }
+  .main > .sec-wrap + .card, .main > .section-h + .card{ margin-top:-22px; }
+  /* both jobs share one Professional Experience panel, split by a thin line */
+  .main > .sec-wrap + .card{ border-bottom-left-radius:0; border-bottom-right-radius:0; padding-bottom:22px; }
+  .main > .sec-wrap + .skills-card{ border-bottom-left-radius:18px; border-bottom-right-radius:18px; padding-bottom:20px; }
+  .main > .sec-wrap + .card + .card{
+    margin-top:-22px; border-top-left-radius:0; border-top-right-radius:0; padding-top:22px;
+    background: linear-gradient(#DFE2EA, #DFE2EA) 30px 0 / calc(100% - 60px) 1px no-repeat, #F4F5F8;
+  }
+  @media (max-width:720px){
+    .section-h{ padding:22px 22px 6px; border-radius:16px 16px 0 0; }
+    .main > .sec-wrap + .card, .main > .section-h + .card{ margin-top:-16px; }
+    .main > .sec-wrap + .card + .card{ margin-top:-16px; background: linear-gradient(#DFE2EA, #DFE2EA) 22px 0 / calc(100% - 44px) 1px no-repeat, #F4F5F8; }
+  }
+
   /* ---------- PRINT ---------- */
   @media print{
-    body{ background:#fff; padding:0; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
-    .sidebar, .card{ box-shadow:none; }
+    body{ padding:0; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
     .sidebar{ position:static; }
     /* use the full printable width of the page */
     .page{ max-width:none; }
     .main > .sec-wrap + .card + .card{ break-inside:avoid; page-break-inside:avoid; }
-    /* light grey panels so each section reads as its own block on paper */
-    .sidebar, .card{ background:#F4F5F8; }
-    .role-scope{ background:#fff; }
-    .hero .blob{ background:#E6F6F7; }
-    /* one left edge: name with contact info, section titles with card content */
-    .name, .role{ text-align:left; }
-    /* section titles sit inside the top of their grey panel */
-    .section-h{ margin:0 !important; background:#F4F5F8; border-radius:18px 18px 0 0; padding:24px 30px 6px; }
-    .sec-wrap + .card, .section-h + .card{ border-top-left-radius:0; border-top-right-radius:0; padding-top:18px; }
-    .main > .sec-wrap + .card, .main > .section-h + .card{ margin-top:-22px; }
-    /* both jobs share one Professional Experience panel, split by a thin line */
-    .main > .sec-wrap + .card{ border-bottom-left-radius:0; border-bottom-right-radius:0; padding-bottom:22px; }
-    .main > .sec-wrap + .skills-card{ border-bottom-left-radius:18px; border-bottom-right-radius:18px; padding-bottom:20px; }
-    .main > .sec-wrap + .card + .card{
-      margin-top:-22px; border-top-left-radius:0; border-top-right-radius:0; padding-top:22px;
-      background: linear-gradient(#DFE2EA, #DFE2EA) 30px 0 / calc(100% - 60px) 1px no-repeat, #F4F5F8;
-    }
   }
 </style>
 </head>
